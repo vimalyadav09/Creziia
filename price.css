@@ -1,0 +1,1320 @@
+/* =========================
+   RESET & BASE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #0d0f14, #11141c);
+  color: #ffffff;
+}
+
+/* NAVBAR */
+/* =========================
+   COSMIC NAVBAR
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 30px;
+
+  /* dark glass background */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20,23,32,0.85),
+      rgba(13,15,20,0.75)
+    );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 10px 40px rgba(0,0,0,0.45);
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 34px;
+  height: auto;
+}
+
+.logo p {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* subtle glow under logo */
+.logo p {
+  background: linear-gradient(135deg, #ff8a4c, #ff5b5b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.navbar nav a {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cfcfcf;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* underline glow */
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #ff8a4c, #ff5b5b);
+  transition: width 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #fff;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   GLOBAL BUTTON SYSTEM
+========================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 26px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #ff8a4c, #ff5b5b);
+  color: #000;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  border: none;
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(255,138,76,0.45);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+
+/* =========================
+   SIGN UP BUTTON
+========================= */
+.navbar .btn-primary {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #ff8a4c, #ff5b5b);
+  color: #000;
+  font-weight: 600;
+
+  box-shadow: 0 10px 30px rgba(255,138,76,0.45);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(255,138,76,0.65);
+}
+
+/* =========================
+   NAVBAR SCROLL POLISH (OPTIONAL)
+========================= */
+.navbar.scrolled {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13,15,20,0.95),
+      rgba(13,15,20,0.9)
+    );
+}
+
+/* =========================
+   PRICING SECTION
+========================= */
+
+.pricing-section {
+  padding: 90px 80px 120px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pricing-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 90px;
+}
+
+.pricing-header h1 {
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.pricing-sub {
+  color: #ff8a4c;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.pricing-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #bdbdbd;
+}
+
+/* =========================
+   PRICING GRID
+========================= */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1150px;
+  margin: 0 auto 120px;
+}
+
+/* =========================
+   PRICING CARD
+========================= */
+
+.price-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.02)
+  );
+  border-radius: 24px;
+  padding: 42px 36px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 30px 80px rgba(0,0,0,0.55);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 40px 100px rgba(0,0,0,0.75);
+}
+
+/* POPULAR */
+.price-card.popular {
+  border: 1px solid rgba(255,138,76,0.45);
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,138,76,0.15);
+  color: #ff8a4c;
+  font-weight: 600;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.price-card h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.price-desc {
+  font-size: 14px;
+  color: #bdbdbd;
+  margin-bottom: 26px;
+  line-height: 1.6;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+.price span {
+  font-size: 14px;
+  color: #9f9f9f;
+  font-weight: 400;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.price-card ul {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.price-card li {
+  font-size: 14px;
+  color: #d0d0d0;
+  margin-bottom: 14px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.price-card li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #ff8a4c;
+}
+
+/* =========================
+   IDEAL FOR
+========================= */
+
+.ideal {
+  font-size: 13px;
+  color: #bdbdbd;
+  margin-bottom: 26px;
+}
+
+.ideal strong {
+  color: #ffffff;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.price-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff8a4c, #ff5b5b);
+  color: #000;
+  box-shadow: 0 10px 28px rgba(255,138,76,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(255,138,76,0.55);
+}
+
+/* =========================
+   RESET & BASE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #0d0f14, #11141c);
+  color: #ffffff;
+}
+
+/* =========================
+   NAVBAR (SHARED)
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(20,23,32,0.85),
+    rgba(13,15,20,0.75)
+  );
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 34px;
+}
+
+.logo p {
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff8a4c, #ff5b5b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.navbar nav a {
+  font-size: 14px;
+  color: #cfcfcf;
+  text-decoration: none;
+  position: relative;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #ff8a4c;
+  transition: width 0.3s ease;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+.btn-primary {
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff8a4c, #ff5b5b);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(255,138,76,0.45);
+}
+
+/* =========================
+   PRICING SECTION
+========================= */
+
+.pricing-section {
+  position: relative;
+  padding: 90px 80px 120px;
+  overflow: hidden;
+}
+
+/* Cosmic gradient */
+.pricing-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(800px 400px at 20% 0%, rgba(255,138,76,0.12), transparent 60%),
+    radial-gradient(700px 350px at 80% 20%, rgba(255,91,91,0.10), transparent 60%);
+  pointer-events: none;
+}
+
+/* Noise grain */
+.pricing-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.pricing-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pricing-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 90px;
+}
+
+.pricing-header h1 {
+  font-size: 44px;
+}
+
+.pricing-sub {
+  color: #ff8a4c;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.pricing-desc {
+  font-size: 15px;
+  color: #bdbdbd;
+  line-height: 1.7;
+}
+
+/* =========================
+   PRICING GRID
+========================= */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1150px;
+  margin: 0 auto 120px;
+}
+
+/* =========================
+   PRICE CARD
+========================= */
+
+.price-card {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.02)
+  );
+  border-radius: 24px;
+  padding: 42px 36px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 30px 80px rgba(0,0,0,0.55);
+  transition: transform 0.35s ease;
+}
+
+.price-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+}
+
+.price-card.popular {
+  border: 1px solid rgba(255,138,76,0.45);
+}
+
+.badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,138,76,0.15);
+  color: #ff8a4c;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.price-card h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.price-desc {
+  font-size: 14px;
+  color: #bdbdbd;
+  margin-bottom: 26px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+.price span {
+  font-size: 14px;
+  color: #9f9f9f;
+}
+
+.price-card ul {
+  list-style: none;
+  margin-bottom: 26px;
+}
+
+.price-card li {
+  font-size: 14px;
+  color: #d0d0d0;
+  margin-bottom: 12px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.price-card li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #ff8a4c;
+}
+
+.ideal {
+  font-size: 13px;
+  color: #bdbdbd;
+  margin-bottom: 24px;
+}
+
+.price-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ff8a4c, #ff5b5b);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+   WHY PRICING WORKS (COSMIC)
+========================= */
+
+.pricing-why {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto 120px;
+  text-align: center;
+}
+
+/* section glow */
+.pricing-why::before {
+  content: "";
+  position: absolute;
+  inset: -120px 0 auto;
+  height: 320px;
+  pointer-events: none;
+}
+
+.pricing-why h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.pricing-why span {
+  color: #ff8a4c;
+}
+
+.pricing-why-sub {
+  font-size: 15px;
+  color: #bdbdbd;
+  margin-bottom: 50px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.pricing-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+/* =========================
+   CARD (COSMIC + NOISE)
+========================= */
+
+.why-card {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.065),
+    rgba(255,255,255,0.025)
+  );
+  border-radius: 20px;
+  padding: 28px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 20px 50px rgba(0,0,0,0.55);
+
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* subtle noise texture */
+.why-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* soft cosmic edge glow */
+.why-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    260px 140px at top center,
+    rgba(255,138,76,0.15),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+/* hover polish */
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    0 35px 90px rgba(0,0,0,0.75);
+}
+
+.why-card:hover::after {
+  opacity: 1;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.why-card h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.why-card p {
+  font-size: 14px;
+  color: #bdbdbd;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   FAQ (COSMIC + NOISE)
+========================= */
+
+.pricing-faq {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 120px;
+  text-align: center;
+}
+
+/* soft cosmic glow behind section */
+.pricing-faq::before {
+  content: "";
+  position: absolute;
+  inset: -120px 0 auto;
+  height: 300px;
+  pointer-events: none;
+}
+
+.pricing-faq h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.pricing-faq span {
+  color: #ff8a4c;
+}
+
+.pricing-faq-sub {
+  font-size: 15px;
+  color: #bdbdbd;
+  margin-bottom: 50px;
+}
+
+/* =========================
+   FAQ GRID
+========================= */
+
+.faq-grid {
+  display: grid;
+  gap: 30px;
+  text-align: left;
+}
+
+/* =========================
+   FAQ ITEM
+========================= */
+
+.faq-item {
+  position: relative;
+  padding: 24px 0 26px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease;
+}
+
+/* subtle noise */
+.faq-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* micro glow line on hover */
+.faq-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    #ff8a4c,
+    transparent
+  );
+  transition: width 0.35s ease;
+}
+
+.faq-item:hover::after {
+  width: 100%;
+}
+
+.faq-item:hover {
+  transform: translateX(4px);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.faq-item h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.faq-item p {
+  font-size: 14px;
+  color: #bdbdbd;
+  line-height: 1.7;
+  max-width: 780px;
+}
+
+
+/* =========================
+   CUSTOM PLAN
+========================= */
+
+.custom-plan {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.custom-plan h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.custom-plan p {
+  font-size: 14px;
+  color: #c7c7c7;
+  margin-bottom: 18px;
+}
+
+.outline-btn {
+  padding: 10px 26px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  cursor: pointer;
+}
+
+.outline-btn:hover {
+  background: #ff8a4c;
+  color: #000;
+  border-color: #ff8a4c;
+}
+
+/* =========================
+   NOTE
+========================= */
+
+.pricing-note {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #9f9f9f;
+  text-align: center;
+}
+
+/* =========================
+   CREZIIA FOOTER
+========================= */
+
+.creziia-footer {
+  position: relative;
+  background: radial-gradient(
+      1200px 600px at top center,
+      rgba(255,138,76,0.15),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #0b0d12, #0d0f14);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* glowing dust effect */
+.footer-glow {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,138,76,0.25) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* GLASS BOX */
+.footer-box {
+  position: relative;
+  border-radius: 26px;
+  padding: 70px 60px 40px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* CONTENT */
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr;
+  gap: 80px;
+  margin-bottom: 50px;
+}
+
+/* LEFT */
+.footer-left .footer-tag {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #cfcfcf;
+}
+
+.footer-left h2 {
+  font-size: 46px;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.footer-left h2 span {
+  color: #ff8a4c;
+}
+
+.footer-left p {
+  color: #c7c7c7;
+  max-width: 420px;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.footer-cta {
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-cta span {
+  color: #ff8a4c;
+}
+
+/* LINKS */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.footer-col h4 {
+  color: #ff8a4c;
+  margin-bottom: 18px;
+}
+
+.footer-col a {
+  display: block;
+  color: #cfcfcf;
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #a9a9a9;
+}
+
+.footer-legal a {
+  font-size: 13px;
+  color: #a9a9a9;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-legal a:hover {
+  color: #fff;
+}
+
+/* LOGO */
+.footer-logo {
+  justify-self: end;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 18px;
+  background: linear-gradient(135deg, #ff8a4c, #ff5b5b);
+  box-shadow: 0 10px 30px rgba(255,138,76,0.5);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .pricing-section {
+    padding: 70px 40px 100px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .pricing-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-header h1 {
+    font-size: 34px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  /* ================= PRICING SECTION ================= */
+  .pricing-section {
+    padding: 60px 20px 80px;
+  }
+
+  .navbar {
+    padding: 14px 18px;
+  }
+
+  .navbar nav {
+    display: none; /* hamburger later */
+  }
+
+  /* HEADER */
+  .pricing-header {
+    margin-bottom: 50px;
+  }
+
+  .pricing-header h1 {
+    font-size: 30px;
+  }
+
+  .pricing-desc {
+    font-size: 14px;
+  }
+
+  /* ================= PRICING CARDS (SWIPE LIKE HOME) ================= */
+  .pricing-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 85vw;
+
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
+
+  .price-card {
+    width: 85vw;
+    min-width: 85vw;
+    max-width: 85vw;
+
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  /* spacing for last card */
+  .pricing-grid::after {
+    content: "";
+    width: 15vw;
+  }
+
+  /* hide scrollbar */
+  .pricing-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .pricing-grid {
+    scrollbar-width: none;
+  }
+
+  /* ================= PRICE TEXT ================= */
+  .price {
+    font-size: 30px;
+  }
+
+  .price-desc {
+    font-size: 14px;
+  }
+
+  /* ================= WHY PRICING ================= */
+  .pricing-why {
+    padding: 60px 20px;
+  }
+
+  .pricing-why h2 {
+    font-size: 26px;
+  }
+
+  .pricing-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ================= FAQ ================= */
+  .pricing-faq {
+    padding: 60px 20px;
+  }
+
+  .pricing-faq h2 {
+    font-size: 26px;
+  }
+
+  .faq-item h4 {
+    font-size: 15px;
+  }
+
+  .faq-item p {
+    font-size: 14px;
+  }
+
+  /* ================= CUSTOM PLAN ================= */
+  .custom-plan {
+    padding: 0 20px;
+  }
+
+  .custom-plan h3 {
+    font-size: 22px;
+  }
+
+  .custom-plan p {
+    font-size: 14px;
+  }
+
+  .footer-box {
+    padding: 50px 24px 30px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-self: center;
+  }
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.35s ease;
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(13,15,20,0.97),
+        rgba(10,12,18,0.97)
+      );
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transition: right 0.45s ease;
+  }
+
+  .navbar nav.active {
+    right: 0;
+  }
+
+  .navbar nav a {
+    font-size: 18px;
+  }
+
+  .navbar .btn-primary {
+    margin-top: 18px;
+  }
+}
+
+/* =========================
+   HAMBURGER → CLOSE ICON
+========================= */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+

@@ -1,0 +1,2 @@
+main-background-color  -  #181a20
+primary-color - #ff8a4c

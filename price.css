@@ -1302,6 +1302,20 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+
+  /* HIDE NAV BY DEFAULT */
+  .navbar nav {
+    display: none;
+  }
+
+  /* SHOW WHEN ACTIVE */
+  .navbar nav.active {
+    display: flex;
+  }
+}
+
+
 /* =========================
    HAMBURGER → CLOSE ICON
 ========================= */

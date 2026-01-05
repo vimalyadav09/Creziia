@@ -2770,6 +2770,10 @@ body {
     display: none; /* hamburger later */
   }
 
+  .btn-primary{
+    width: 53%;
+  }
+
   /* ================= HERO ================= */
   .hero {
     flex-direction: column;

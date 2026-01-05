@@ -2770,8 +2770,12 @@ body {
     display: none; /* hamburger later */
   }
 
-  .btn-primary{
-    width: 53%;
+  
+  .btn-primary {
+    padding: 10px 18px;   /* slightly tighter */
+    font-size: 13px;
+
+    white-space: nowrap; /* 🔥 prevents wrapping */
   }
 
   /* ================= HERO ================= */
